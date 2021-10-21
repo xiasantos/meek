@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4305852930122376294}
   - component: {fileID: 8251580202808175060}
   - component: {fileID: 7980544713840769385}
+  - component: {fileID: 2782909098419158909}
   m_Layer: 0
   m_Name: sheep
   m_TagString: Untagged
@@ -240,3 +241,19 @@ MonoBehaviour:
   moveSpeed: 3
   rb: {fileID: 4305852930122376294}
   animator: {fileID: 0}
+  moving: 1
+--- !u!114 &2782909098419158909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615399938483126635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41357b2a4eb834865a4dd14bd38b1eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheepAnimator: {fileID: 8055146059390960427}
+  playerMovement: {fileID: 7980544713840769385}
+  grass: {fileID: 73908994840575019, guid: 2d8d11814c3a64ac2b0a00caf0cc069f, type: 3}

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnGrass : MonoBehaviour
@@ -8,16 +7,14 @@ public class SpawnGrass : MonoBehaviour
     public float minX;
     public float maxY;
     public float minY;
-    public float timebetweenSpawn;
-    private float spawnTime;
 
-    void Update()
+    public int grassAmount = 50;
+
+    void Start()
     {
-
-        if (Time.time > spawnTime)
+        for (int i = 0; i < grassAmount; i++)
         {
             Spawn();
-            spawnTime = Time.time + timebetweenSpawn;
         }
     }
 

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     public Rigidbody2D rb;
     public Animator animator;
 
+
     Vector2 movement;
 
+    public bool moving = true;
     private bool facingRight = true;
 
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -20,6 +22,15 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat(Speed, movement.sqrMagnitude);
+
+        //if (moving)
+        //{
+        //    moveSpeed = 2f;
+        //}
+        //else
+        //{
+        //    moveSpeed = 0f;
+        //}
     }
 
     private void FixedUpdate()
