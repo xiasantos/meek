@@ -8,13 +8,22 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
+    public bool IsEating { get; private set; } = false;
 
-    Vector2 movement;
-
-    public bool moving = true;
+    private Vector2 movement;
     private bool facingRight = true;
-
     private static readonly int Speed = Animator.StringToHash("Speed");
+
+
+    private void OnEnable()
+    {
+        EatGrass.SheepEating += OnSheepEating;
+    }
+
+    private void OnDisable()
+    {
+        EatGrass.SheepEating -= OnSheepEating;
+    }
 
     private void Update()
     {
@@ -22,19 +31,15 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat(Speed, movement.sqrMagnitude);
-
-        //if (moving)
-        //{
-        //    moveSpeed = 2f;
-        //}
-        //else
-        //{
-        //    moveSpeed = 0f;
-        //}
     }
 
     private void FixedUpdate()
     {
+        if (IsEating)
+        {
+            return;
+        }
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         if (movement.x > 0 && !facingRight)
@@ -50,5 +55,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void OnSheepEating(bool eating) {
+        IsEating = eating;
     }
 }

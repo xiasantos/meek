@@ -27,4 +27,5 @@ public class SpawnTrees : MonoBehaviour
         Instantiate(target, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
 
     }
-}
+
+    }
