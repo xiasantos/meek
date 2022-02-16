@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 619922496467180992}
   - component: {fileID: 1325144713980344250}
-  - component: {fileID: 7730598337196541838}
   - component: {fileID: -6380758278329282831}
+  - component: {fileID: 3773030438067173059}
   m_Layer: 0
   m_Name: tree_2_0
   m_TagString: Tree
@@ -86,32 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7730598337196541838
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029442108888924254}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.15415895, y: 0.08258504}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.67, y: 1}
-    newSize: {x: 3.67, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5338008, y: 1.1651701}
-  m_EdgeRadius: 0
 --- !u!114 &-6380758278329282831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +98,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92479cfc6aa74f6193d28881d4409ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &3773030438067173059
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029442108888924254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.0016173124, y: 0.1017538}
+  - {x: -0.087580204, y: 0.2774223}
+  - {x: -0.016203761, y: 0.44879454}
+  - {x: 0.089672565, y: 0.81185293}
+  - {x: 0.32669377, y: 0.8492822}
+  - {x: 0.4923389, y: 0.863304}
+  - {x: 0.47750735, y: 0.55323374}
+  - {x: 0.5312178, y: 0.3431776}
+  - {x: 0.5386033, y: 0.03818518}
+  - {x: 0.36662912, y: 0.056679532}
+  - {x: 0.1897912, y: 0.09825812}
+  - {x: 0.031808496, y: 0.10889289}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &2440050707766614934
 GameObject:
   m_ObjectHideFlags: 0
