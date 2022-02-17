@@ -10,6 +10,11 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
-     
+        StartCoroutine(CounterOn());
+    }
+    IEnumerator CounterOn()
+    {
+        yield return new WaitForSeconds(4);
+        grassCounter.enabled = true;
     }
 }
