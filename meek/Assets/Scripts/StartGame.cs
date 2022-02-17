@@ -10,7 +10,6 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
-        DOTween.Init(autoKillMode, useSafeMode, logBehaviour);
-
+     
     }
 }
