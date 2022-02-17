@@ -1,7 +1,10 @@
+using Random = UnityEngine.Random;
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-using TMPro;
 using System;
+using TMPro;
+
 
 public class EatGrass : MonoBehaviour
 {
@@ -10,7 +13,9 @@ public class EatGrass : MonoBehaviour
     private GameObject grassCollided;
     public float grassEaten;
 
-    public AudioSource eatGrass;
+    public List<AudioClip> audioClips;
+    public AudioClip currentClip;
+    public AudioSource source;
  
     //public TextMeshProUGUI grassScore;
 
@@ -18,13 +23,21 @@ public class EatGrass : MonoBehaviour
 
     public static event Action<bool> SheepEating;
 
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Grass"))
         {
             SheepEating?.Invoke(true);
             grassCollided = collision.gameObject;
-            eatGrass.Play();
+            currentClip = audioClips[Random.Range(0, audioClips.Count)];
+            source.clip = currentClip;
+            source.Play();
             StartCoroutine(Eat());
             
             //score animation!!
