@@ -7,8 +7,11 @@ public class EatGrass : MonoBehaviour
 {
     public Animator sheepAnimator;
     public GameObject grass;
-    public float grassEaten;
     private GameObject grassCollided;
+    public float grassEaten;
+
+    public AudioSource eatGrass;
+ 
     //public TextMeshProUGUI grassScore;
 
     private static readonly int Eating = Animator.StringToHash("Eating");
@@ -21,6 +24,7 @@ public class EatGrass : MonoBehaviour
         {
             SheepEating?.Invoke(true);
             grassCollided = collision.gameObject;
+            eatGrass.Play();
             StartCoroutine(Eat());
             
             //score animation!!
