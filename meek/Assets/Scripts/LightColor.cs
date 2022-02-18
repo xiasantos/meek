@@ -10,6 +10,7 @@ public class LightColor : MonoBehaviour
     public Light sunLight;
     public Color[] dayCycles;
     public int[] cycleDuration;
+    public float duration;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class LightColor : MonoBehaviour
         {
             cycling = StartCoroutine(
                 NextLightCycle(
-                    sunLight, dayCycles[i], dayCycles[j], 3
+                    sunLight, dayCycles[i], dayCycles[j], duration
                 )
             );
         }
