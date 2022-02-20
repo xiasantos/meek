@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GrassScore : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class GrassScore : MonoBehaviour
     {
         camAnimator.SetTrigger("End");
         yield return new WaitForSeconds(4);
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(0);
     }
 
 }
