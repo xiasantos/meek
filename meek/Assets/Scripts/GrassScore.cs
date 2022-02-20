@@ -10,8 +10,7 @@ public class GrassScore : MonoBehaviour
     public SpawnGrass spawnGrass;
     public GameObject endPanel;
     public TextMeshProUGUI grassCounterTXT;
-
-    public Animator camAnimator;
+    public Animator animator;
 
     private void FixedUpdate()
     {
@@ -26,8 +25,9 @@ public class GrassScore : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        camAnimator.SetTrigger("End");
-        yield return new WaitForSeconds(4);
+        Debug.Log("Hello From End Game");
+        animator.SetBool("isGameOver", true);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
     }
 

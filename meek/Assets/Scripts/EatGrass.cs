@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using System;
-using TMPro;
-
 
 public class EatGrass : MonoBehaviour
 {
@@ -16,8 +14,6 @@ public class EatGrass : MonoBehaviour
     public List<AudioClip> audioClips;
     public AudioClip currentClip;
     public AudioSource source;
- 
-    //public TextMeshProUGUI grassScore;
 
     private static readonly int Eating = Animator.StringToHash("Eating");
 
@@ -39,8 +35,7 @@ public class EatGrass : MonoBehaviour
             source.clip = currentClip;
             source.Play();
             StartCoroutine(Eat());
-            
-            //score animation!!
+
         }
     }
 
