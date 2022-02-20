@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CinemachineSwitcher : MonoBehaviour
 {
-    private Animator animator;
-
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        animator = GetComponent<Animator>();
+        
     }
 
-    private 
+    // Update is called once per frame
     void Update()
     {
         
