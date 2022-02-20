@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -26,8 +25,9 @@ public class GrassScore : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        camAnimator.SetTrigger("End");
         yield return new WaitForSeconds(4);
+        camAnimator.Play("StartCam");
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
     }
 
