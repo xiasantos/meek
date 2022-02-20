@@ -19,15 +19,15 @@ public class GrassScore : MonoBehaviour
         if (eatGrass.grassEaten >= spawnGrass.grassAmount)
         {
             endPanel.SetActive(true);
+            grassCounterTXT.enabled = false;
             StartCoroutine(EndGame());
         }
     }
 
     IEnumerator EndGame()
     {
-        Debug.Log("Hello From End Game");
         animator.SetBool("isGameOver", true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
         SceneManager.LoadScene(0);
     }
 
