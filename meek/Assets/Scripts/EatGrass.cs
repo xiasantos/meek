@@ -35,7 +35,6 @@ public class EatGrass : MonoBehaviour
             source.clip = currentClip;
             source.Play();
             StartCoroutine(Eat());
-
         }
     }
 

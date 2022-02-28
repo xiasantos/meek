@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using DG.Tweening;
 
 public class StartGame : MonoBehaviour
 {
     public TextMeshProUGUI grassCounter;
+    public TextMeshProUGUI eatGrass;
+    public GameObject restartButton;
 
     void Start()
     {
@@ -15,6 +15,8 @@ public class StartGame : MonoBehaviour
     IEnumerator CounterOn()
     {
         yield return new WaitForSeconds(4);
+        eatGrass.enabled = false;
         grassCounter.enabled = true;
+        restartButton.SetActive(true);
     }
 }

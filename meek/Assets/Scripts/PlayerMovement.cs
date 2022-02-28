@@ -26,9 +26,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-     //   if mov x gt 0
-       //     lookingx = move x
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -53,12 +50,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);    
     }
 
-
-    private void OnSheepEating(bool eating) {
+    private void OnSheepEating(bool eating)
+    {
         IsEating = eating;
     }
 }
